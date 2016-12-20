@@ -1,29 +1,23 @@
 package "nova/nest"
 
 class Nest {
-    Object data
+    construct(private Object data) {}
     
-    construct(Object data) => this.data = data
-    
-    public toBe(Object other) -> Bool {
+    public toBe(Object other) => true {
         if (other != data) {
             // throw exception
             
             return false
-        } else {
-            return true
         }
     }
     
     // or
     
-    public toNotBe(Object other) -> Bool {
+    public toNotBe(Object other) => true {
         if (other == data) {
             // throw exception
             
             return false
-        } else {
-            return true
         }
     }
     
