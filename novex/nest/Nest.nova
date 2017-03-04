@@ -1,0 +1,39 @@
+package "novex/nest"
+
+class Nest<X> {
+    construct(private X data) {}
+    
+    public toBe<Y>(Y other, String message = null) => true {
+        message = message ?: "#data != #other"
+        
+        if (other != data) {
+            throw InvalidAssertionException(message)
+            
+            return false
+        }
+    }
+    
+    // or
+    
+    public toNotBe<Y>(Y other, String message = null) => true {
+        message = message ?: "#data == #other"
+        
+        if (other == data) {
+            throw InvalidAssertionException(message)
+            
+            return false
+        }
+    }
+    
+    public static expectTrue(Bool condition, String message = "Value not true") {
+        if (!condition) {
+            fail(message)
+        }
+    }
+    
+    public static fail(String message = "Failure") {
+        throw InvalidAssertionException(message)
+    }
+    
+    public static expect<T>(T obj) => new Nest<T>(obj)
+}
