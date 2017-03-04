@@ -31,6 +31,12 @@ class Nest<X> {
         }
     }
     
+    public static expectFalse(Bool condition, String message = "Value not false") {
+        if (condition) {
+            fail(message)
+        }
+    }
+    
     public static fail(String message = "Failure") {
         throw InvalidAssertionException(message)
     }
