@@ -9,9 +9,6 @@ class ResultWindow {
     public construct() {
         window = new Window(title: "Results", x: 0, y: 0, width: 800, height: 500)
         
-        let button = new Button(200, 200, 100, 100)
-        
-        window.frame.addChild(button)
         
         window.center().create()
     }
