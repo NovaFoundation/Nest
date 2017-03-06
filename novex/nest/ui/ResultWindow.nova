@@ -1,15 +1,14 @@
 package "novex/nest/ui"
 
 import "nova/star/Window"
-import "nova/star/Button"
 
-class ResultWindow {
-    Window window
+class ResultWindow extends Window {
+    // visible Window window
     
     public construct() {
-        window = new Window(title: "Results", x: 0, y: 0, width: 800, height: 500)
+        super(title: "Results", x: 0, y: 0, width: 800, height: 500)
         
-        
-        window.center().create()
+        // window.center().create()
+        center()
     }
 }
