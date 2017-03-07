@@ -1,0 +1,10 @@
+package "novex/nest"
+
+class TestResult {
+    visible Bool success
+    visible Timer timer
+    visible String description
+    visible String functionName
+    
+    public toString() => "\"#{description ?: functionName}\" => " + success ? "Success" : "Failure"
+}
