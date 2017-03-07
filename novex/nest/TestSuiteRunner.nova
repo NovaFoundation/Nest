@@ -3,5 +3,7 @@ package "novex/nest"
 trait TestSuiteRunner implements TestRunner {
     visible TestCase[] testCases => testRunners.reduce({ _ + _.testCases }, new TestCase[0])
     
-    visible TestRunner[] testRunners
+    visible TestRunner[] testRunners => testSuites.reduce({ _ + _.testRunners }, new TestRunner[0])
+    
+    visible TestSuite[] testSuites
 }
