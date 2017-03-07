@@ -3,8 +3,11 @@ package "novex/nest"
 class TestCase {
     visible String functionName
     visible String description
+    visible let function()
     
-    public construct(visible String functionName, visible String description = null) {}
+    public construct(visible String functionName, function(), visible String description = null) {
+        this.function = function
+    }
     
     getHeader() => description ?: functionName
     
