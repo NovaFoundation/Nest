@@ -10,7 +10,7 @@ class ResultBar extends Panel {
         set {
             testCount = value
             
-            
+            refreshWidth()
         }
     }
     
@@ -18,8 +18,7 @@ class ResultBar extends Panel {
         set {
             successCount = value
             
-            successPanel.width = (Int)((testCount != 0 ? value / (Double)testCount : 1) * width)
-            successPanel.repaint()
+            refreshWidth()
         }
     }
     
@@ -36,5 +35,10 @@ class ResultBar extends Panel {
         successPanel = new Panel(borderSize, borderSize, width - borderSize * 2, height - borderSize * 2)
         successPanel.backgroundColor = Color.GREEN
         addChild(successPanel)
+    }
+    
+    refreshWidth() {
+        successPanel.width = (Int)((testCount != 0 ? successCount / (Double)testCount : 1) * width)
+        successPanel.repaint()
     }
 }
