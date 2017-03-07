@@ -1,0 +1,40 @@
+package "novex/nest/ui"
+
+import "nova/star/Panel"
+import "nova/star/Color"
+
+class ResultBar extends Panel {
+    Panel successPanel, failurePanel
+    
+    public Int testCount {
+        set {
+            testCount = value
+            
+            
+        }
+    }
+    
+    public Int successCount {
+        set {
+            successCount = value
+            
+            successPanel.width = (Int)((testCount != 0 ? value / (Double)testCount : 1) * width)
+            successPanel.repaint()
+        }
+    }
+    
+    public Int failureCount => testCount - successCount
+    
+    public construct(Int x = 0, Int y = 0, Int width = 150, Int height = 25, Int borderSize = 3) {
+        super(x, y, width, height)
+        backgroundColor = new Color(200)
+        
+        failurePanel = new Panel(borderSize, borderSize, width - borderSize * 2, height - borderSize * 2)
+        failurePanel.backgroundColor = Color.RED
+        addChild(failurePanel)
+        
+        successPanel = new Panel(borderSize, borderSize, width - borderSize * 2, height - borderSize * 2)
+        successPanel.backgroundColor = Color.GREEN
+        addChild(successPanel)
+    }
+}
