@@ -1,0 +1,7 @@
+package "novex/nest"
+
+trait TestRunner {
+    public Int testCount
+    
+    public runTests(onResult(TestResult) = {}) {}
+}
