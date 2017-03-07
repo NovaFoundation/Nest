@@ -1,5 +1,5 @@
 package "novex/nest"
 
-class InvalidAssertionException extends NestException {
+class NestException extends Exception {
     public construct(String message) => super(message)
 }
