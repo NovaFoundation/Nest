@@ -1,9 +1,11 @@
 package "novex/nest/ui"
 
+import "novex/nest/TestRunner"
+
 import "nova/star/Window"
 
 class ResultWindow extends Window {
-    public construct() {
+    public construct(TestRunner runner) {
         super(title: "Results", x: 0, y: 0, width: 800, height: 500)
         
         center()
