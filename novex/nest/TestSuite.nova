@@ -1,5 +1,7 @@
 package "novex/nest"
 
 trait TestSuite {
-    public runTests() {}
+    visible TestRunner[] testRunners
+    
+    
 }
