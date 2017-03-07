@@ -10,5 +10,7 @@ class TestResult {
     
     public construct(visible Bool success, visible Timer timer, visible String functionName, visible String description = null) {}
     
-    public toString() => "\"#{description ?: functionName}\" => " + success ? "Success" : "Failure"
+    getHeader() => description ?: functionName
+    
+    public toString() => "\"#getHeader()\" => " + (success ? "Success" : "Failure")
 }
