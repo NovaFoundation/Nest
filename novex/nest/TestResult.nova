@@ -5,12 +5,9 @@ import "nova/time/Timer"
 class TestResult {
     visible Bool success
     visible Timer timer
-    visible String functionName
-    visible String description
+    visible TestCase testCase
     
-    public construct(visible Bool success, visible Timer timer, visible String functionName, visible String description = null) {}
+    public construct(visible Bool success, visible Timer timer, visible TestCase testCase) {}
     
-    getHeader() => description ?: functionName
-    
-    public toString() => "\"#getHeader()\" => " + (success ? "Success" : "Failure")
+    public toString() => "#testCase => " + (success ? "Success" : "Failure")
 }
