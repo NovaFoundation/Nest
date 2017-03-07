@@ -1,0 +1,7 @@
+package "novex/nest"
+
+trait TestSuiteRunner implements TestRunner {
+    visible TestCase[] testCases => testRunners.reduce({ _ + _ }, new TestCase[0])
+    
+    visible TestRunner[] testRunners
+}
