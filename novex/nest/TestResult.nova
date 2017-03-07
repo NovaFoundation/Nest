@@ -8,7 +8,7 @@ class TestResult {
     visible String functionName
     visible String description
     
-    public construct(visible Bool success, visible Timer timer, visible String functionName, visible String description = "") {}
+    public construct(visible Bool success, visible Timer timer, visible String functionName, visible String description = null) {}
     
     public toString() => "\"#{description ?: functionName}\" => " + success ? "Success" : "Failure"
 }
