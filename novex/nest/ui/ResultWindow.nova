@@ -3,12 +3,9 @@ package "novex/nest/ui"
 import "nova/star/Window"
 
 class ResultWindow extends Window {
-    // visible Window window
-    
     public construct() {
         super(title: "Results", x: 0, y: 0, width: 800, height: 500)
         
-        // window.center().create()
         center()
     }
 }
