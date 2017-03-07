@@ -1,7 +1,7 @@
 package "novex/nest"
 
 class TestSuite {
-    visible TestRunner[] testRunners
+    visible TestRunnerModel[] testRunners
     
-    
+    public construct(visible TestRunnerModel[] testRunners)
 }
