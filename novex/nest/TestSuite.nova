@@ -1,6 +1,6 @@
 package "novex/nest"
 
-trait TestSuite {
+class TestSuite {
     visible TestRunner[] testRunners
     
     
