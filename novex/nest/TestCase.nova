@@ -6,6 +6,10 @@ class TestCase {
     
     visible String header => description ?: functionName
     
+    static Int staticId = 0
+    visible Int id = ++staticId
+    public Long hashCodeLong => id
+    
     public construct(visible String functionName, visible String description = null) {}
     
     public toString() => "\"#header\""
