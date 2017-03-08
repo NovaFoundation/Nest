@@ -4,9 +4,9 @@ class TestCase {
     visible String functionName
     visible String description
     
+    visible String header => description ?: functionName
+    
     public construct(visible String functionName, visible String description = null) {}
     
-    getHeader() => description ?: functionName
-    
-    public toString() => "\"#getHeader()\""
+    public toString() => "\"#header\""
 }
