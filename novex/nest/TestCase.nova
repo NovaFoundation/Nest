@@ -1,6 +1,8 @@
 package "novex/nest"
 
-class TestCase {
+import "nova/operators/EqualsOperator"
+
+class TestCase implements EqualsOperator<TestCase> {
     visible String functionName
     visible String description
     
@@ -12,5 +14,6 @@ class TestCase {
     
     public construct(visible String functionName, visible String description = null) {}
     
+    public equals(TestCase other) => id == other.id
     public toString() => "\"#header\""
 }
