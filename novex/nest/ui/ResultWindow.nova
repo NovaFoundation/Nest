@@ -4,8 +4,10 @@ import "novex/nest/TestRunner"
 
 import "nova/star/Window"
 
+import "nova/io/OutputStream"
+
 class ResultWindow extends Window {
-    public construct(TestRunner runner) {
+    public construct(TestRunner runner, OutputStream out = OutputStream.EMPTY) {
         super(title: "Results", x: 0, y: 0, width: 800, height: 500)
         
         center()
