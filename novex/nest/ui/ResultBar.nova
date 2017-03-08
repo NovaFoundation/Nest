@@ -6,6 +6,8 @@ import "nova/star/Color"
 class ResultBar extends Panel {
     Panel successPanel, failurePanel
     
+    public Int borderSize
+    
     public Int testCount {
         set {
             testCount = value
@@ -24,7 +26,7 @@ class ResultBar extends Panel {
     
     public Int failureCount => testCount - successCount
     
-    public construct(Int x = 0, Int y = 0, Int width = 150, Int height = 25, Int borderSize = 3) {
+    public construct(Int x = 0, Int y = 0, Int width = 150, Int height = 25, public Int borderSize = 3) {
         super(x, y, width, height)
         backgroundColor = new Color(200)
         
@@ -38,7 +40,7 @@ class ResultBar extends Panel {
     }
     
     refreshWidth() {
-        successPanel.width = (Int)((testCount != 0 ? successCount / (Double)testCount : 1) * width)
+        successPanel.width = Math.max(0, (Int)(((testCount != 0 ? successCount / (Double)testCount : 1) * width) - borderSize * 2))
         successPanel.repaint()
     }
 }
