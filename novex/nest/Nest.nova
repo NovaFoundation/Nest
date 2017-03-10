@@ -1,8 +1,11 @@
 package "novex/nest"
 
+import "nova/io/FancyOutputStream"
 import "nova/primitive/number/RealNumber"
 
 class Nest<X> {
+    visible static final FancyOutputStream out = new FancyOutputStream()
+    
     construct(private X data) {}
     
     public toBe<Y>(Y other, String message = null) => true {
