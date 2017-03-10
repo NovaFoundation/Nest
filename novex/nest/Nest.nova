@@ -27,7 +27,7 @@ class Nest<X> {
         }
     }
     
-    [RequireGenericType X extends RealNumber]
+    [RequireGenericType X extends Double]
     public toBeWithinToleranceOf(Double target, passing Double tolerance, String message = null) => true {
         if (!Double.withinTolerance((Double)data, target, tolerance)) {
             message = message ?: "#data not within tolerance of #target"
