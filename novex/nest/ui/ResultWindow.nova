@@ -39,7 +39,9 @@ class ResultWindow extends Window {
         })
         
         runner.runTests(result => {
-            bars[result.testCase].item2.successCount = 1
+            if (let bar = bars[result.testCase]) {
+                bar.item2.successCount = 1
+            }
         }, out)
         
         // let runners = runner.class.isOfType(TestSuiteRunner) ?
