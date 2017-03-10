@@ -1,5 +1,7 @@
 package "novex/nest"
 
+import "nova/primitive/number/RealNumber"
+
 class Nest<X> {
     construct(private X data) {}
     
@@ -19,6 +21,17 @@ class Nest<X> {
         message = message ?: "#data == #other"
         
         if (other == data) {
+            throw InvalidAssertionException(message)
+            
+            return false
+        }
+    }
+    
+    [RequireGenericType X extends RealNumber]
+    public toBeWithinToleranceOf(Double target, passing Double tolerance, String message = null) => true {
+        if (!Double.withinTolerance((Double)data, target, tolerance)) {
+            message = message ?: "#data not within tolerance of #target"
+            
             throw InvalidAssertionException(message)
             
             return false
