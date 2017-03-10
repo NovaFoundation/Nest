@@ -6,9 +6,9 @@ class Nest<X> {
     construct(private X data) {}
     
     public toBe<Y>(Y other, String message = null) => true {
-        message = message ?: "#data != #other"
-        
         if (other != data) {
+            message = message ?: "#data != #other"
+            
             throw InvalidAssertionException(message)
             
             return false
@@ -18,9 +18,9 @@ class Nest<X> {
     // or
     
     public toNotBe<Y>(Y other, String message = null) => true {
-        message = message ?: "#data == #other"
-        
         if (other == data) {
+            message = message ?: "#data == #other"
+            
             throw InvalidAssertionException(message)
             
             return false
