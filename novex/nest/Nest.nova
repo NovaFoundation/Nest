@@ -8,7 +8,7 @@ class Nest<X> {
     
     construct(private X data) {}
     
-    public toBe<Y>(Y other, String message = null) => true {
+    public toBe(X other, String message = null) => true {
         if (other != data) {
             message = message ?: "#data != #other"
             
@@ -20,7 +20,7 @@ class Nest<X> {
     
     // or
     
-    public toNotBe<Y>(Y other, String message = null) => true {
+    public toNotBe(X other, String message = null) => true {
         if (other == data) {
             message = message ?: "#data == #other"
             
