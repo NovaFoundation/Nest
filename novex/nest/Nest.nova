@@ -6,7 +6,9 @@ import "nova/primitive/number/RealNumber"
 class Nest<X> {
     visible static final FancyOutputStream out = new FancyOutputStream()
     
-    construct(private X data) {}
+    X data
+    
+    construct(this X data) {}
     
     public toBe(X other, String message = null) => true {
         if (other != data) {
