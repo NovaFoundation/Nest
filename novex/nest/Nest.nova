@@ -10,7 +10,7 @@ class Nest<X> {
     
     construct(this X data) {}
     
-    public toBe(X other, String message = null) => true {
+    public toBe(X other, var String message = null) => true {
         if (other != data) {
             message = message ?: "#data != #other"
             
@@ -22,7 +22,7 @@ class Nest<X> {
     
     // or
     
-    public toNotBe(X other, String message = null) => true {
+    public toNotBe(X other, var String message = null) => true {
         if (other == data) {
             message = message ?: "#data == #other"
             
@@ -33,7 +33,7 @@ class Nest<X> {
     }
     
     [RequireGenericType X extends Double]
-    public toBeWithinToleranceOf(Double target, passing Double tolerance, String message = null) => true {
+    public toBeWithinToleranceOf(Double target, passing Double tolerance, var String message = null) => true {
         if (!Double.withinTolerance((Double)data, target, tolerance)) {
             message = message ?: "#data not within tolerance of #target"
             
