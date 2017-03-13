@@ -49,6 +49,12 @@ class Nest<X> {
         }
     }
     
+    public static expectNull(Object value, String message = "Value is not null") {
+        if (value) {
+            fail(message)
+        }
+    }
+    
     public static expectTrue(Bool condition, String message = "Value not true") {
         if (!condition) {
             fail(message)
