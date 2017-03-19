@@ -1,0 +1,5 @@
+import "nova/package/Package"
+
+class Nest extends Package {
+    
+}
