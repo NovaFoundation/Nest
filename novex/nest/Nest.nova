@@ -14,7 +14,7 @@ class Nest<X> {
         if (other != data) {
             message = message ?: "#data != #other"
             
-            throw InvalidAssertionException(message)
+            throw new InvalidAssertionException(message)
             
             return false
         }
@@ -26,7 +26,7 @@ class Nest<X> {
         if (other == data) {
             message = message ?: "#data == #other"
             
-            throw InvalidAssertionException(message)
+            throw new InvalidAssertionException(message)
             
             return false
         }
@@ -37,7 +37,7 @@ class Nest<X> {
         if (!Double.withinTolerance((Double)data, target, tolerance)) {
             message = message ?: "#data not within tolerance of #target"
             
-            throw InvalidAssertionException(message)
+            throw new InvalidAssertionException(message)
             
             return false
         }
@@ -68,7 +68,7 @@ class Nest<X> {
     }
     
     public static fail(String message = "Failure") {
-        throw InvalidAssertionException(message)
+        throw new InvalidAssertionException(message)
     }
     
     public static expect<T>(T obj) => new Nest<T>(obj)
