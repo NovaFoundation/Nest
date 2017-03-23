@@ -43,6 +43,22 @@ class Nest<X> {
         }
     }
     
+    public toThrow(Class exceptionType, String message = "Did not throw exception type #exceptionType", Bool soft = false) {
+        let func() = data
+        
+        if (!Exception.catchType(func, exceptionType, soft)) {
+            throw new InvalidAssertionException(message)
+        }
+    }
+    
+    public toNotThrow(Class exceptionType, String message = "Threw exception type #exceptionType", Bool soft = false) {
+        let func() = data
+        
+        if (Exception.catchType(func, exceptionType, soft)) {
+            throw new InvalidAssertionException(message)
+        }
+    }
+    
     public static expectValue(Object value, String message = "Value is null") {
         if (!value) {
             fail(message)
