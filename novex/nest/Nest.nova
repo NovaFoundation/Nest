@@ -59,30 +59,6 @@ class Nest<X> {
         }
     }
     
-    public static expectValue(Object value, String message = "Value is null") {
-        if (!value) {
-            fail(message)
-        }
-    }
-    
-    public static expectNull(Object value, String message = "Value is not null") {
-        if (value) {
-            fail(message)
-        }
-    }
-    
-    public static expectTrue(Bool condition, String message = "Value not true") {
-        if (!condition) {
-            fail(message)
-        }
-    }
-    
-    public static expectFalse(Bool condition, String message = "Value not false") {
-        if (condition) {
-            fail(message)
-        }
-    }
-    
     public static fail(String message = "Failure") {
         throw new InvalidAssertionException(message)
     }
