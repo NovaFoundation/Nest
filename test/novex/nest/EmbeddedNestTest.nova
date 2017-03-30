@@ -1,0 +1,13 @@
+package "novex/nest"
+
+import static "novex/nest/Nest"
+
+class EmbeddedNestTest {
+	test testEmbeddedFunction() {
+		
+		
+		// test thisIsTheEmbeddedFunction() {
+		// 	expect(5).toBe(4)
+		// }
+	}
+}
