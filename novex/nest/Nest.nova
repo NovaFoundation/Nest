@@ -66,4 +66,8 @@ class Nest<X> {
     public static expect<T>(T obj) => new Nest<T>(obj)
     
     public static expect(func()) => new Nest<func()>(func)
+
+    public static test(String description, testCode()) {
+        testCode()
+    }
 }
