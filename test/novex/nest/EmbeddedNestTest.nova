@@ -1,13 +1,21 @@
 package "novex/nest"
 
+import "novex/nest/NestException"
+
 import static "novex/nest/Nest"
 
 class EmbeddedNestTest {
-	test testEmbeddedFunction() {
-		
-		
+	test embeddedFunction() {
+
+
 		// test thisIsTheEmbeddedFunction() {
 		// 	expect(5).toBe(4)
 		// }
+	}
+
+	test lambdaFunction() {
+		test("something", {
+			expect({  }).toThrow(NestException)
+		})
 	}
 }
