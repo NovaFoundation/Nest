@@ -1,0 +1,8 @@
+package "novex/nest"
+
+import "novex/nest/NestException"
+
+import static "novex/nest/Nest"
+
+class TypeNestTest {
+}
