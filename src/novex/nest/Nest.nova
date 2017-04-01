@@ -33,7 +33,7 @@ class Nest<X> {
     }
     
     [RequireGenericType X extends Double]
-    public toBeWithinToleranceOf(Double target, passing Double tolerance, var String message = null) => true {
+    public toBeWithinToleranceOf(Double target, passing Double tolerance = 0.0001, var String message = null) => true {
         if (!Double.withinTolerance((Double)data, target, tolerance)) {
             message = message ?: "#data not within tolerance of #target"
             
