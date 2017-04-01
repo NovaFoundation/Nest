@@ -5,4 +5,7 @@ import "novex/nest/NestException"
 import static "novex/nest/Nest"
 
 class TypeNestTest {
+	test integer() {
+		expect(5).toBe(5)
+	}
 }
